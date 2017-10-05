@@ -13,7 +13,7 @@ module Api
     private
 
     def event_params
-      params.permit(:name, :store_id, :product_id, :user_id)
+      params.permit(:name, :product_id, :user_id)
     end
   end
 end

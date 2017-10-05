@@ -16,7 +16,7 @@ module Api
     def user_changed_event
       create_event(
         name: 'user changed',
-        store_id: current_store,
+        store_id: current_store.id,
         user_id: @user.id
       )
     end
