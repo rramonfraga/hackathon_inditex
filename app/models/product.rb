@@ -1,12 +1,12 @@
 class Product < ApplicationRecord
   belongs_to :collections
 
-  attribute :size_ids, :string, array: true
+  has_many :sizes
   attribute :styles, :string, array: true
   attribute :tags, :string, array: true
 
   class << self
-    def search_by(store_id, collection_id, user)
+    def search_by(user, store_id, collection_id)
       where({
         store: store_id,
         collection_id: collection_id,

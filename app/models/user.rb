@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attribute :size_ids, :string, array: true
+  has_many :sizes
   attribute :styles, :string, array: true
 end
