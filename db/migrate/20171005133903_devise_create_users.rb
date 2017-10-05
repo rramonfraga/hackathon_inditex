@@ -33,7 +33,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # User prefences
       t.string :gender
       t.string :color
-      t.style
+      t.string :styles
+      t.string :size_ids
 
 
       t.timestamps null: false

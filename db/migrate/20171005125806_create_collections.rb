@@ -5,7 +5,6 @@ class CreateCollections < ActiveRecord::Migration[5.0]
       t.datetime :date
       t.references :product, index: true
 
-
       t.timestamps
     end
   end

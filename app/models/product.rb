@@ -1,17 +1,9 @@
 class Product < ApplicationRecord
   belongs_to :collections
 
-  has_many :tags
-  has_many :tags, through: :tag_products
-
-  has_many :stores
-  has_many :stores, through: :store_products
-
-  has_many :size
-  has_many :size, through: :size_products
-
-  has_many :style_products
-  has_many :style, through: :style_products
+  attribute :size_ids, :string, array: true
+  attribute :styles, :string, array: true
+  attribute :tags, :string, array: true
 
   class << self
     def search_by(store_id, collection_id, user)
@@ -21,7 +13,7 @@ class Product < ApplicationRecord
         gender: user.gender,
         sizes: user.size_ids,
         color: user.color,
-        style: user.style_ids
+        style: user.styles
       })
     end
   end
