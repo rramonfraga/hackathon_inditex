@@ -5,9 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :code
       t.string :type
       t.integer :price
-      t.string :size
       t.string :color
-      t.string :style
       t.string :position
       t.string :gender
       t.string :material

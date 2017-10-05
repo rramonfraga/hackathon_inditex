@@ -10,6 +10,8 @@ class Product < ApplicationRecord
   has_many :size
   has_many :size, through: :size_products
 
+  has_many :style_products
+  has_many :style, through: :style_products
 
   class << self
     def search_by(store_id, collection_id, user)
@@ -17,8 +19,9 @@ class Product < ApplicationRecord
         store: store_id,
         collection_id: collection_id,
         gender: user.gender,
-        size: user.size_id,
-        color: user.color
+        sizes: user.size_ids,
+        color: user.color,
+        style: user.style_ids
       })
     end
   end
